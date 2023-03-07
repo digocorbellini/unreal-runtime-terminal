@@ -21,8 +21,16 @@ void UMyUserWidget::OnTextCommit(const FText& text, ETextCommit::Type commitMeth
 
 		// TODO: see if we have to clear field after enter and how we can 
 		// prevent clearing on unfocusing
+		InputTextBox->SetText(FText::FromString(""));
+
+		//// Add text to terminal
+		TerminalString = FString::Printf(TEXT("> ")) + text.ToString() + FString::Printf(TEXT("\n"));
+
+		// TODO: handle keeping terminal string within bounds of terminal box
+
+		TerminalTextBlock->SetText(FText::FromString(TerminalString));
 	}
 
 	// TODO: temporarily just set terminal text to the submitted text commit
-	TerminalTextBlock->SetText(text);
+	//TerminalTextBlock->SetText(text);
 }

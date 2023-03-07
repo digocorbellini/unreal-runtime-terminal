@@ -6,6 +6,16 @@
 #include "Blueprint/UserWidget.h"
 #include "MyUserWidget.generated.h"
 
+UENUM()
+enum class EParamType : uint8
+{
+	FLOAT,
+	INT,
+	BOOL,
+	STRING,
+	CHAR,
+};
+
 /**
  * 
  */
@@ -26,4 +36,14 @@ protected:
 
 	UFUNCTION()
 		void OnTextCommit(const FText& text, ETextCommit::Type commitMethod);
+
+	FString TerminalString;
+
+	const int MAX_NUM_LINES = 9;
+	const int MAX_CHAR_PER_LINE = 50;
+
+//public:
+//	// TODO: have a way to take in function pointers
+//	UFUNCTION()
+//		void MapFunction(FString stringKey, UObject* userObject);
 };
