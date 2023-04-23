@@ -3,6 +3,7 @@
 
 #include "MyUserWidget.h"
 #include "Components/EditableTextBox.h"
+#include "GenericPlatform/GenericPlatformMisc.h"
 #include "Components/TextBlock.h"
 
 void UMyUserWidget::NativeConstruct()
@@ -29,8 +30,27 @@ void UMyUserWidget::OnTextCommit(const FText& text, ETextCommit::Type commitMeth
 		// TODO: handle keeping terminal string within bounds of terminal box
 
 		TerminalTextBlock->SetText(FText::FromString(TerminalString));
+
+		// call function if the string key exists
+		TFunction<void()> *currFunct = functionsMap.Find(text.ToString());
+		if (currFunct)
+		{
+			// call function
+			//((void (*)(void)) currFunct)();
+			GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, TEXT("maped function found and called"));
+
+			(*currFunct)();
+		}
 	}
 
 	// TODO: temporarily just set terminal text to the submitted text commit
 	//TerminalTextBlock->SetText(text);
+}
+
+void UMyUserWidget::MapFunction(FString strKey, TFunction<void()> callbackLambda)
+{
+	//((void (*)(void)) functionPointer)();
+	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, TEXT("map function called"));
+
+	functionsMap.Add(strKey, callbackLambda);
 }

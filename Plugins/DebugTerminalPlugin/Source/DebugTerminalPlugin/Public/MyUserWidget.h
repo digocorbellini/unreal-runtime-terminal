@@ -42,8 +42,11 @@ protected:
 	const int MAX_NUM_LINES = 9;
 	const int MAX_CHAR_PER_LINE = 50;
 
-//public:
+	TMap<FString, class TFunction<void()>> functionsMap;
+
+public:
 //	// TODO: have a way to take in function pointers
 //	UFUNCTION()
 //		void MapFunction(FString stringKey, UObject* userObject);
+	void MapFunction(FString strKey, class TFunction<void()> callbackLambda);
 };
