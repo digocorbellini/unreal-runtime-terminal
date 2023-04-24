@@ -27,7 +27,7 @@ In order to be able to call methods form the runtime terminal, you must first ma
 
 The callback lambda can be used as a standalone function to be called, as pictured below:
 ```C++
-runtimeTerminal->MapFunction(TEXT("testPrint"), []() { GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Blue, TEXT("testPrint Called"));});
+runtimeTerminal->MapFunction(TEXT("testPrint"), []() { GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, TEXT("testPrint Called"));});
 ```
 
 The callback lambda can also be used as a wrapper for void methods which you would like to call, as pictured below:
