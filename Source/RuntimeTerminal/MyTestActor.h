@@ -16,11 +16,11 @@ public:
 	// Sets default values for this actor's properties
 	AMyTestActor();
 
-	UMyUserWidget* runtimeTerminal;
-
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+
+	bool didTickStuff;
 
 public:	
 	// Called every frame
@@ -28,4 +28,7 @@ public:
 
 	void TestPrint();
 
+	TMap<FString, TFunction<void()>> functionsMap;
+
+	void MapFunction(FString strKey, TFunction<void()> callbackLambda);
 };

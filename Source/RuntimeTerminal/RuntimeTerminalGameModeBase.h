@@ -20,4 +20,7 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		UMyUserWidget *runtimeTerminal;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+		bool beginPlayRan;
 };

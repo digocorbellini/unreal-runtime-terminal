@@ -5,5 +5,6 @@
 
 ARuntimeTerminalGameModeBase::ARuntimeTerminalGameModeBase()
 {
-
+	runtimeTerminal = nullptr;
+	beginPlayRan = false;
 }

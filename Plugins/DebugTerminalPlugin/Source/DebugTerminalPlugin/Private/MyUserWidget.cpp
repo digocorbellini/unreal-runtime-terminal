@@ -3,7 +3,6 @@
 
 #include "MyUserWidget.h"
 #include "Components/EditableTextBox.h"
-#include "GenericPlatform/GenericPlatformMisc.h"
 #include "Components/TextBlock.h"
 
 void UMyUserWidget::NativeConstruct()
