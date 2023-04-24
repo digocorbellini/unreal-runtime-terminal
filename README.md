@@ -25,7 +25,7 @@ Once you have given the debug terminal a method and a string to call said method
 ## Passing methods to `UMyUserWidget`
 In order to be able to call methods form the runtime terminal, you must first map methods to strings using the `MapFunction()` method. It takes in a string and a callback lambda. The string will be the phrase which you will type in the terminal to invoke a method at runtime, and the callback lambda will be the method to be called once you type the phrase in the terminal.
 
-Currently, only void lambdas with no return values are supported.
+Currently, only void lambdas with no parameters are supported.
 
 The callback lambda can be used as a standalone function to be called, as pictured below:
 ```C++
