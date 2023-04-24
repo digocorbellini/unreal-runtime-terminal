@@ -1,4 +1,4 @@
-# unreal-runtime-terminal
+# unreal-runtime-terminal (For UE 4.27)
 This is a plugin for unreal which allows users to call their methods at runtime using a terminal in order to test their features. This can be used as a quick and easy way for developers to test their newly implemented features without having to create temporary tester actors which simply invoke new methods. 
 
 ## How to install (Per project)
