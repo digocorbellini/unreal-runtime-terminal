@@ -16,7 +16,7 @@ In order to have the debug terminal visible, you must add the `MyUserWidget` wid
 
 Now the debug terminal should be visible on play in the top left corner of the screen:
 
-![viewport visible](./Images/viewport_visible.png)
+![terminal visible](./Images/terminal_visible.png)
 
 In order to call your methods in the terminal, you must first give the debug terminal methods to call and strings to use as keys for calling said methods. This is done through calling the `MapFunction` method in the `UMyUserWidget` instance which you created and added to the viewport. I would recommend adding a reference to the `UMyUserWidget` instance in either a custom level or custom game mode class that way you can access it from any of your other actors in your project. For more information on how to pass methods to the `UMyUserWidget` class, go to the [Passing Methods To `UMyUserWidget`](https://github.com/digocorbellini/unreal-runtime-terminal/edit/master/README.md#passing-methods-to-umyuserwidget) section.
 
