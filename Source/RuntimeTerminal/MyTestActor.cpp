@@ -67,7 +67,7 @@ void AMyTestActor::Tick(float DeltaTime)
 		if (mode)
 		{
 			if (mode->runtimeTerminal)
-				mode->runtimeTerminal->MapFunction(TEXT("testPrint"), []() { GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Blue, TEXT("testPrint Called"));});
+				mode->runtimeTerminal->MapFunction(TEXT("testPrint"), [this]() { TestPrint(); });
 			else
 				GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, TEXT("runtimeTerminal not initialized yet"));
 		}
@@ -78,7 +78,6 @@ void AMyTestActor::Tick(float DeltaTime)
 			GEngine->AddOnScreenDebugMessage(-1, 0, FColor::Red, TEXT("can't run runtime terminal things"));
 	}
 
-	GEngine->AddOnScreenDebugMessage(-1, 0, FColor::Red, TEXT("printing in tick"));
 
 	//TFunction<void()>* currFunct = functionsMap.Find("testPrint");
 	//if (currFunct)

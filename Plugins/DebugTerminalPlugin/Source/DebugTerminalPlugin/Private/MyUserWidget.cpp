@@ -35,10 +35,13 @@ void UMyUserWidget::OnTextCommit(const FText& text, ETextCommit::Type commitMeth
 		if (currFunct)
 		{
 			// call function
-			//((void (*)(void)) currFunct)();
-			GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, TEXT("maped function found and called"));
-
 			(*currFunct)();
+
+			TerminalTextBlock->SetText(FText::FromString(TerminalString + " invoked"));
+		}
+		else
+		{
+			TerminalTextBlock->SetText(FText::FromString(TerminalString + " not found"));
 		}
 	}
 
@@ -48,8 +51,5 @@ void UMyUserWidget::OnTextCommit(const FText& text, ETextCommit::Type commitMeth
 
 void UMyUserWidget::MapFunction(FString strKey, TFunction<void()> callbackLambda)
 {
-	//((void (*)(void)) functionPointer)();
-	GEngine->AddOnScreenDebugMessage(-1, 5, FColor::Red, TEXT("map function called"));
-
 	functionsMap.Add(strKey, callbackLambda);
 }
